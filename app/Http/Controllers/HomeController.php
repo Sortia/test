@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Posts;
 
 class HomeController extends Controller
 {
+    private $connection = "test";
     /**
      * Create a new controller instance.
      *
@@ -21,8 +22,11 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function Main()
     {
-        return view('home');
+
+        $posts = Posts::on($this->connection)->orderBy("id", "desc")->paginate(10);
+
+        return view('main', ['title' => 'Новое', "posts" => $posts]);
     }
 }
