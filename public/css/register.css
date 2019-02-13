@@ -1,0 +1,21 @@
+
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+.blueberry {
+    max-width: 500px;
+}
+
+.event-name {
+    text-align: center;
+    margin: 10px;
+}
+
+.fish-text {
+    width: 500px;
+    margin: auto;
+}
+

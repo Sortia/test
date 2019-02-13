@@ -22,14 +22,17 @@ Auth::routes();
 
 Route::get('/', 'HomeController@main');
 
+Route::get('/event/{id}/registration', "HomeController@addNewMember");
 
 Route::get('/register', function () {
     return redirect('/login');
 });
 
+Route::get('/event/{id}', function ($id) {
+    return view('/event' . $id);
+});
 
-
-
+Route::get('/send',"HomeController@sendMail");
 
 
 

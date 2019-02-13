@@ -18,6 +18,10 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{asset("css/blueberry.css")}}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+    <script src="{{asset("js/jquery.blueberry.js")}}" defer></script>
 </head>
 <body>
     <div id="app">
@@ -37,7 +41,7 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav ml-auto" style="float: right;">
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
@@ -71,6 +75,8 @@
                 </div>
             </div>
         </nav>
+
+
 
         <main class="py-4">
             @yield('content')
