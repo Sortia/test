@@ -30,8 +30,6 @@ class JobMail implements ShouldQueue
         $this->recipient = $recipient;
         $this->email = $email;
         $this->data = $data;
-
-
     }
 
     /**
@@ -41,7 +39,6 @@ class JobMail implements ShouldQueue
      */
     public function handle()
     {
-
         Mail::to($this->email)->send( new SendMail($this->recipient, $this->data));
     }
 }
