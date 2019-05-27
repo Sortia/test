@@ -39,7 +39,7 @@ class JobMail implements ShouldQueue
      */
     public function handle()
     {
-        Mail::to($this->email)->send( new SendMail($this->recipient, $this->data));
+        Mail::to('alex-kiyan.lug@mail.ru')->send( new SendMail());
     }
 }
 

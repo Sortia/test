@@ -65,7 +65,7 @@ class HomeController extends Controller
         $representative_email = User::on($this->connection)->where('id', $id)->pluck('email')->toArray()[0];
 
         $this->sendMail('member', $bids->email, []);
-        $this->sendMail('representative', $representative_email, $bids->toArray());
+//        $this->sendMail('representative', $representative_email, $bids->toArray());
 
         return response()->json($bids);
     }
@@ -73,8 +73,6 @@ class HomeController extends Controller
     private function sendMail($recipient, $email, $data)
     {
         JobMail::dispatch($recipient, $email, $data);
-
-//        Mail::to($email)->later(10, new SendMail($recipient, $data));
     }
 }
 

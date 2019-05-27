@@ -18,10 +18,10 @@ class SendMail extends Mailable
      * @param $recipient
      * @param $data
      */
-    public function __construct($recipient, $data)
+    public function __construct(/*$recipient, $data*/)
     {
-        $this->recipient = $recipient;
-        $this->formData = $data;
+//        $this->recipient = $recipient;
+//        $this->formData = $data;
     }
 
     /**
@@ -30,13 +30,14 @@ class SendMail extends Mailable
      */
     public function build()
     {
-        switch ($this->recipient){
-            case 'member':
-                return $this->view('mail.member', [])->subject('Registration');
-                break;
-            case 'representative':
-                return $this->view('mail.representative', ['formData' => $this->formData])->subject('New member');
-                break;
-        }
+        return $this->view('mail.member', [])->subject('Registration');
+//        switch ($this->recipient){
+//            case 'member':
+//                return $this->view('mail.member', [])->subject('Registration');
+//                break;
+//            case 'representative':
+//                return $this->view('mail.representative', ['formData' => $this->formData])->subject('New member');
+//                break;
+//        }
     }
 }
